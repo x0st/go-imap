@@ -264,6 +264,14 @@ func writeSearchKey(enc *imapwire.Encoder, criteria *imap.SearchCriteria) {
 	}
 
 	enc.Special(')')
+
+	if criteria.Unseen {
+		enc.SP().Atom("UNSEEN")
+	}
+
+	if criteria.Undeleted {
+		enc.SP().Atom("UNDELETED")
+	}
 }
 
 func flagSearchKey(flag imap.Flag) string {

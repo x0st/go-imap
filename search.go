@@ -55,6 +55,9 @@ type SearchCriteria struct {
 	Larger  int64
 	Smaller int64
 
+	Unseen    bool
+	Undeleted bool
+
 	Not []SearchCriteria
 	Or  [][2]SearchCriteria
 
